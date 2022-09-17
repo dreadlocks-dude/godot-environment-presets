@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Suzy.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 10, 10 )
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="CylinderMesh" id=3]
+top_radius = 0.0
+bottom_radius = 0.5
+
+[node name="Monkey" type="Spatial"]
+
+[node name="Floor" type="MeshInstance" parent="."]
+transform = Transform( 0.490837, 0, 0, 0, 0.490837, 0, 0, 0, 0.490837, -0.189001, 0.00235403, -0.907501 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../Suzy")
+
+[node name="Suzy" type="MeshInstance" parent="."]
+transform = Transform( 0.490837, 0, 0, 0, 0.490837, 0, 0, 0, 0.490837, -0.0615005, 0.462726, -0.0760591 )
+material_override = SubResource( 2 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("")
+
+[node name="SpotLight4" type="SpotLight" parent="."]
+transform = Transform( -0.340591, 0.575463, -0.743532, 0.220602, 0.817649, 0.531775, 0.913965, 0.0170931, -0.405432, -2.2451, 2.52536, -0.359017 )
+shadow_enabled = true
+shadow_bias = 0.055
+spot_range = 5.64189
+spot_attenuation = 0.25
+spot_angle = 56.84
+spot_angle_attenuation = 0.0853779
+
+[node name="SpotLight6" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.516474, 0.856303, 0, -0.856303, -0.516474, -0.145401, 2.75657, -1.21125 )
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 0.192
+spot_range = 5.58119
+spot_attenuation = 0.517632
+spot_angle = 74.71
+spot_angle_attenuation = 0.267944
+
+[node name="Cone" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210929, 0.523889, -0.814877 )
+mesh = SubResource( 3 )
+
+[node name="CameraLight" type="SpotLight" parent="."]
+transform = Transform( 0.995453, 0.00506258, 0.0951226, -0.00496434, 0.999987, -0.0012694, -0.0951278, 0.000791408, 0.995465, 0.2167, 0.365573, 3.24217 )
+light_energy = 0.379
+shadow_bias = 0.063
+shadow_reverse_cull_face = true
+spot_range = 6.435
+spot_attenuation = 0.0717938
+spot_angle = 31.53
+spot_angle_attenuation = 0.210224

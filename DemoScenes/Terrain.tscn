@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/terrain/terrain_Plane.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/terrain/RockyTerrain.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+uv2_scale = Vector3( 10, 10, 10 )
+
+[node name="Terrain" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.33788, 0 )
+
+[node name="terrain_Plane" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 0.02, 0, 0, 0, 10, -0.149591, -6.31941, -0.14327 )
+material_override = SubResource( 1 )
+mesh = ExtResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.941482, 0.167797, -0.292327, 0, 0.867279, 0.497822, 0.337062, -0.46869, 0.816528, -13.3053, 2.06288, 15.8986 )
+shadow_enabled = true
+spot_range = 55.1295
+spot_attenuation = 0.0457527
+spot_angle = 57.48
+spot_angle_attenuation = 0.90125

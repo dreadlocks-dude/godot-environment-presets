@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://BasicWhite.tres" type="Material" id=1]
+[ext_resource path="res://assets/backdrop.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="CylinderMesh" id=1]
+height = 5.0
+
+[sub_resource type="SphereMesh" id=2]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="CylinderMesh" id=4]
+top_radius = 0.0
+
+[sub_resource type="SpatialMaterial" id=5]
+params_diffuse_mode = 3
+params_cull_mode = 2
+albedo_color = Color( 1, 0.827451, 0.709804, 1 )
+metallic_specular = 0.0
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.5
+
+[node name="FourFigureComposition" type="Spatial"]
+
+[node name="Cylinder" type="MeshInstance" parent="."]
+transform = Transform( 0.363732, 0, 0, 0, 0.363732, 0, 0, 0, 0.363732, -0.408063, 0.743886, -0.282827 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 1 )
+
+[node name="Sphere" type="MeshInstance" parent="."]
+transform = Transform( 0.926406, 0, 0, 0, 0.926406, 0, 0, 0, 0.926406, -0.921351, 0.474501, 0.613854 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 2 )
+
+[node name="Cube" type="MeshInstance" parent="."]
+transform = Transform( 0.637632, 0, 0, 0, 0.637632, 0, 0, 0, 0.637632, -0.0546571, 0.344025, 0.590728 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 3 )
+
+[node name="Cone" type="MeshInstance" parent="."]
+transform = Transform( 0.424218, 0, 0, 0, 0.713018, 0, 0, 0, 0.424218, 0.409846, 0.709993, -0.146559 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 4 )
+
+[node name="backdrop" type="MeshInstance" parent="."]
+transform = Transform( 3.77421, 0, 0, 0, 2.63626, 0, 0, 0, 2.36186, 0, 0.0543, 0.80766 )
+material_override = SubResource( 5 )
+mesh = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.999477, 0.00572581, -0.0318086, 0, 0.984182, 0.177161, 0.0323199, -0.177068, 0.983668, -0.61377, 1.3064, 3.80734 )
+keep_aspect = 0
+fov = 55.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CameraLight" type="SpotLight" parent="."]
+transform = Transform( 0.995453, 0.00506258, 0.0951226, -0.00496434, 0.999987, -0.0012694, -0.0951278, 0.000791408, 0.995465, 0.2167, 0.365573, 3.24217 )
+light_energy = 0.379
+shadow_bias = 0.063
+shadow_reverse_cull_face = true
+spot_range = 6.435
+spot_attenuation = 0.0717938
+spot_angle = 31.53
+spot_angle_attenuation = 0.210224
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( -0.620355, 0.53834, -0.570394, 0.220602, 0.817649, 0.531775, 0.752658, 0.204059, -0.625992, -2.1836, 2.52536, -0.359017 )
+light_energy = 2.481
+shadow_enabled = true
+shadow_bias = 0.282
+spot_range = 5.64189
+spot_attenuation = 0.25
+spot_angle = 76.48
+spot_angle_attenuation = 0.0853779
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( -0.0165062, -0.622622, 0.782349, -0.152886, 0.774826, 0.613409, -0.988106, -0.109485, -0.10798, 5.5199, 4.57826, -0.348876 )
+light_energy = 0.367
+shadow_enabled = true
+shadow_bias = 0.201
+spot_range = 10.406
+spot_attenuation = 0.683021
+spot_angle = 30.2
+spot_angle_attenuation = 0.0647046
+
+[node name="SpotLight3" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.516474, 0.856303, 0, -0.856303, -0.516474, -0.0839654, 2.75657, -1.21125 )
+light_energy = 0.455
+shadow_enabled = true
+shadow_bias = 0.192
+spot_range = 5.58119
+spot_attenuation = 0.517632
+spot_angle = 74.71
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight5" type="SpotLight" parent="."]
+transform = Transform( -0.0165062, -0.622622, 0.782349, -0.152886, 0.774826, 0.613409, -0.988106, -0.109485, -0.10798, -4.65107, 4.57826, -0.348876 )
+visible = false
+light_energy = 0.367
+shadow_enabled = true
+shadow_bias = 0.201
+spot_range = 10.406
+spot_attenuation = 0.683021
+spot_angle = 30.2
+spot_angle_attenuation = 0.0647046

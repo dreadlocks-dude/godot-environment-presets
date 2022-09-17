@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DemoScenes/FourFigureComposition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://presets/Vibrant.tres" type="Environment" id=3]
+
+[node name="StudioBasic" type="Spatial"]
+
+[node name="FourFigureComposition" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.662037, 0, 0.17971, 0, 0.685994, 0, -0.17971, 0, 0.662037, 0, -0.00132442, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.993772, -0.0125263, 0.110726, 0, 0.993662, 0.112412, -0.111432, -0.111712, 0.987473, 0.11673, 0.692737, 2.83242 )
+keep_aspect = 0
+fov = 55.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
